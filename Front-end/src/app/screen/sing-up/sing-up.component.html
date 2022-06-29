@@ -1,52 +1,48 @@
-
 <form [formGroup]="formulario">
+
     <body style="background-color:rgb(172, 252, 165)">
         <div class="container">
             <div class="d-flex justify-content-center h-100">
-            <div class="card">
-                <div class="card-header">
-                <h3>Crear cuenta</h3>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Crear cuenta</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input formControlName="mail" type="email" class="form-control" placeholder="Usuario" />
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input formControlName="password" type="password" class="form-control"
+                                    placeholder="Contraseña" />
+                            </div>
+                            <div class="row align-items-center remember">
+                                <ngx-recaptcha2 #captchaElem [siteKey]="siteKey">
+                                </ngx-recaptcha2>
+                                
+                            </div>
+                            <div class="form-group">
+
+
+                                <button type="button" value="Login" class="btn float-right login_btn" (click)="crear()" *ngIf="password.valid && mail.valid"
+                                    [routerLink]="['/home']">
+                                    Iniciar
+                                </button>
+                                <button type="button" value="Login" class="btn float-right login_btn" disabled *ngIf="password.invalid || mail.invalid"
+                                    >
+                                    Iniciar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="card-body">
-                <form>
-                    <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"
-                        ><i class="fas fa-user"></i
-                        ></span>
-                    </div>
-                    <input formControlName="mail" type="email" class="form-control" placeholder="Usuario" />
-                    </div>
-                    <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-key"></i></span>
-                    </div>
-                    <input
-                        formControlName="password"
-                        type="password"
-                        class="form-control"
-                        placeholder="Contraseña"
-                    />
-                    </div>
-                    <div class="row align-items-center remember">
-                    <input type="checkbox" />Aceptar terminos de servicio
-                    </div>
-                    <div class="form-group">
-                    <button
-                        type="button"
-                        value="Login"
-                        class="btn float-right login_btn"
-                        (click)="crear()"
-                        [routerLink]="['/home']"                        
-                    >
-                        Iniciar
-                    </button>
-                    </div>
-                </form>
-                </div>
-            </div>
             </div>
         </div>
     </body>
 </form>
-

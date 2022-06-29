@@ -1,4 +1,5 @@
 const express = require('express');
+const { db } = require('../models/user');
 const userSchema = require("../models/user");
 
 const router = express.Router();
@@ -22,10 +23,12 @@ router.get('/users',(req,res)=>{
         .catch((error)=>res.json({message: error}));
 });
 //get a user
-router.get("/users/:id",(req,res)=>{
-    const { id } = req.params;
+router.get("/users/:name",(req,res)=>{
+    
+    const { name } = req.params;
+    console.log(name);
     userSchema     
-        .findById(id)
+        .find({name: name})
         .then((data)=>res.json(data))
         .catch((error)=>res.json({message: error}));
 });

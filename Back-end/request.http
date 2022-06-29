@@ -10,4 +10,4 @@ Content-Type: application/json
 ###
 GET http://localhost:9000/api/users HTTP/1.1
 ###
-GET http://localhost:9000/api/users/62bc81b8820a58c2142cf439 HTTP/1.1
+GET http://localhost:9000/api/users/Vicho HTTP/1.1

@@ -12,10 +12,11 @@ export class SingUpComponent implements OnInit {
   password:AbstractControl;
   mail:AbstractControl;
   listUsers:Array<User> = [];
+  siteKey : string;
 
 
   constructor(public fb:FormBuilder){
-
+    this.siteKey='6LeHYq8gAAAAAL8HX0WlLtGKeWv66C9eUyBzuZXL';
     this.formulario=this.fb.group({
      password:['',[Validators.required]],
      mail:['',[Validators.required]],
@@ -39,7 +40,9 @@ export class SingUpComponent implements OnInit {
     
     let usuario:User={
       password:this.password.value,
-      name:this.mail.value
+      name:this.mail.value,
+      admin:false
+
     } 
     let usuariJson = JSON.stringify(usuario);
     console.log(usuariJson);

@@ -1,0 +1,51 @@
+.img-fluid{    
+    width: 50%;
+    
+}
+.img{
+    display: block;
+}
+
+.row{
+    padding-top: 5%;
+}
+.tarjeta{
+    padding-bottom: 5%;
+}
+.rango{
+    padding-bottom: 5%;
+
+}
+.boton{
+    margin: 2%;
+}
+.recarga h1{
+    margin-left: 2%;
+}
+.fa-circle-plus{
+    float:left;
+    color: rgb(1, 48, 255);
+    font-size: x-large;
+}
+.fa-minus-circle{
+    float:left;
+    
+    color: rgb(1, 48, 255);
+    font-size: x-large;
+}
+.minus{
+    padding-left: 8%;
+}
+.plus :hover{
+    color: rgb(107, 187, 2);
+}
+.minus :hover{
+    color: red;
+}
+.money{
+    clear:both;
+}
+.mb-4{
+    width: 10%;
+    padding: auto;
+}

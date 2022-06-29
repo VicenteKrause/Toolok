@@ -1,0 +1,49 @@
+<body style="background-color:rgb(172, 252, 165)">
+<div align="center"><img src="https://ms5.metrovalparaiso.cl/img/logo/logo-efe.jpg" class="img-fluid" alt=""></div>
+
+<div class="container">
+    <div class="row">
+        <div class="tarjeta">
+            <h4>Tarjeta de transporte</h4>
+            <p>Es el medio de pago de EFE trenes de Chile para su servicio tren Limache-Puerto y te permite acceder al servicio en toda la red,
+            como también a los servicios de combinación de Buses y Trole+Tren. Tiene un costo de $2.000 e incluye una carga inicial de $500.
+            La puedes adquirir en todas las boleterías y Máquinas de Autoservicio dispuestas en nuestras estaciones.</p>
+        </div>
+        
+        <div class="tarjeta">
+            <h4>TNE</h4>
+            Los estudiantes podrán optar a una rebaja tarifaria utilizando su
+            tarjeta TNE, la cual se debe solicitar a Junaeb o a su establecimiento
+            educacional. Este descuento corresponde a un 66% sobre el valor general
+            y es válido en todo horario y durante los 365 días del año. Para viajar
+            en el servicio tren Limache-Puerto solo debes: Activar y cargar tu
+            tarjeta TNE.
+        </div>        
+    </div>
+    <div class="recarga">
+        <h2>Ingrese monto</h2>
+        <div class="plus">
+            <i class="fa fa-circle-plus" (click)="suma()" ></i>
+        </div>        
+        
+        <div class="minus">
+            <i class="fa fa-minus-circle" aria-hidden="true" (click)="resta()"></i>
+        </div>
+        <!-- <form [formGroup]="formulario">
+            <div class="form-outline mb-4">
+                <input
+                    formControlName="numer"                
+                    type="number"
+                    id="form3Example4"
+                    class="form-control"
+                />
+                <label class="form-label" for="form3Example4">Cantidad</label>
+            </div>
+        </form> -->
+        
+        <div class="money">
+            <h1>{{exampleNum}}</h1>
+        </div>        
+        <button type="button" class="btn btn-outline-primary" (click)="home()">Confirmar</button>
+    </div>
+</div>

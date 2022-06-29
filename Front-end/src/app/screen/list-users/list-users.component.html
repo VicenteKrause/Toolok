@@ -1,0 +1,24 @@
+<body style="background-color:rgb(172, 252, 165)">
+    <div class="componente-lista">
+        <div class="alert alert-primary" role="alert" *ngIf="listUsers.length == 0">
+            No hay usuaarios rgistrados
+        </div>
+        
+        <table class="table table-bordered" *ngIf="listUsers.length > 0">
+            <thead>
+                <tr>
+                    <th>Mail usuario</th>
+                    <th>Contraseña</th>
+                    
+                </tr>
+                
+            </thead>
+            <tbody *ngFor="let item of listUsers">
+                <tr>
+                    <td>{{item.name}}</td>  
+                    <td>{{item.password}}</td>                    
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>

@@ -1,0 +1,44 @@
+.navbar-brand{
+    display: inline-block;
+    margin-right: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #99ff33 0%, #ffff00 100%);
+    -webkit-background-clip: text;
+        background-clip: text;
+	-webkit-text-fill-color: transparent;
+    margin-left: 50px;
+    font-size: x-large;
+    font-weight: bold;
+}.nav-item{
+    font-weight: bold;       
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #99ff33 0%, #ffff00 100%);
+    -webkit-background-clip: text;
+        background-clip: text;
+	-webkit-text-fill-color: transparent;
+    
+}
+
+.btn-floating{
+    background-color: #4b4d4a;
+    color: #99ff33;
+    border: #4b4d4a;
+}
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top:-6px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+} 

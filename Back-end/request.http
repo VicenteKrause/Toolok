@@ -1,0 +1,13 @@
+###
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Vicente",
+    "password":"tulook"
+}
+
+###
+GET http://localhost:9000/api/users HTTP/1.1
+###
+GET http://localhost:9000/api/users/62bc81b8820a58c2142cf439 HTTP/1.1

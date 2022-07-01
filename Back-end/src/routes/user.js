@@ -62,7 +62,36 @@ router.post("/registrar", (req, res) => {
     }
   });
 });
+router.post("/admin", (req, res) => {
+  const userS = req.body;
+  const name = userS.name;
+  const password = userS.password;
 
+  userSchema.findOne({ name }, (err, user) => {
+    if (err) {
+      res.status(500).send("Error al autenticar");
+      console.log("error1");
+    } else if (!user) {
+      res.status(500).send("Error ,Usuari no existe");
+      console.log("error2");
+    } else {
+      user.isAdmin(name , (err , result)=>{
+        if (err) {
+          res.status(500).send("Error al autenticar");
+          console.log("error3");
+        }else if(result){
+          res.status(200)
+          console.log("tai redy");            
+            
+        }else{
+          res.status(500);
+          console.log("quien eres");
+        }
+        
+      });
+    }
+  });
+});
 //update user
 router.put("/users", (req, res) => {});
 

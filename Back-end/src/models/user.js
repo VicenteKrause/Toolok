@@ -26,5 +26,15 @@ userSchema.methods.isCorrectPassword = function(password, callback){
         }
     });
 }
+userSchema.methods.isAdmin = function(name, callback){
+    if(this.name==name){
+        console.log('ola');
+    }
+    if(this.admin){
+        callback(err, same);
+    }else{
+        callback(err);
+    }
+}
 
 module.exports = mongoose.model('User', userSchema);

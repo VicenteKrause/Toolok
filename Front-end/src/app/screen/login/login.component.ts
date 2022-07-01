@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+
 import { listUsers, User} from 'src/app/Interface/users';
 
 @Component({
@@ -26,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  home(){
+  async home(){
     let usuario:User={
       password:this.password.value,
       name:this.mail.value,
@@ -34,14 +36,33 @@ export class LoginComponent implements OnInit {
 
     } 
     let usuariJson = JSON.stringify(usuario);
-    fetch('http://localhost:9000/api/registrar',{
+    console.log('tula');
+    const resp = await fetch('http://localhost:9000/api/registrar',{
         method: 'POST',
         headers: {
           "Content-Type" : "application/json"
         },
         body: usuariJson
     });
+    if(resp.status == 200){
+      const admin = await fetch('http://localhost:9000/api/admin',{
+          method: 'POST',
+          headers: {
+            "Content-Type" : "application/json"
+          },
+          body: usuariJson
+      });
+      if(admin.status == 200){
+        usuario.admin=true;
+      }
+      else{
+       ;
+      }
+    }else{
+      window.alert("Usuario no registrado")
+    }
     
+
     
   }
 }

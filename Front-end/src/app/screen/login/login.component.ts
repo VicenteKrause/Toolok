@@ -53,10 +53,10 @@ export class LoginComponent implements OnInit {
       if(resp.status === 200){
         window.alert("Secion Iniciada Admin");        
         
-        window.location.href="/home/loged"; 
+        window.location.href="/admin/micros"; 
       }else if(resp.status === 300){
         window.alert("Secion Iniciada");
-        window.location.href="/home";
+        window.location.href="/home/loged";
       }
       else{
         window.alert("error");

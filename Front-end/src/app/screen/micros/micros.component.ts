@@ -34,19 +34,7 @@ export class MicrosComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  show(){
-    
-  }
-  crear(){
-    let micro:Micros={
-      numero : this.numero.value,
-      color : this.color.value,
-      inicio : this.inicio.value,
-      final : this.final.value,
-    }
-   
-    this.listMicros.push(micro);
-    console.log(listMicros);   
-  }
+  
+  
 
 }

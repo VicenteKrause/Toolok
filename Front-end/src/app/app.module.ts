@@ -21,7 +21,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { ListUsersComponent } from './screen/list-users/list-users.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { HomeLogedComponent } from './screen/home-loged/home-loged.component';
-import { MicroUsuarioComponent } from './screen/micro-usuario/micro-usuario.component';
+import { MicroadminComponent } from './screen/microadmin/microadmin.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MicroUsuarioComponent } from './screen/micro-usuario/micro-usuario.comp
     MicrosComponent,
     ListUsersComponent,
     HomeLogedComponent,
-    MicroUsuarioComponent
+    MicroadminComponent,
+   
   ],
   imports: [
     BrowserModule,

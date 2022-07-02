@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MicroUsuarioComponent } from './micro-usuario.component';
+import { MicroadminComponent } from './microadmin.component';
 
-describe('MicroUsuarioComponent', () => {
-  let component: MicroUsuarioComponent;
-  let fixture: ComponentFixture<MicroUsuarioComponent>;
+describe('MicroadminComponent', () => {
+  let component: MicroadminComponent;
+  let fixture: ComponentFixture<MicroadminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MicroUsuarioComponent ]
+      declarations: [ MicroadminComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MicroUsuarioComponent);
+    fixture = TestBed.createComponent(MicroadminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

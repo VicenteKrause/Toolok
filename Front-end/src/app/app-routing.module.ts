@@ -13,6 +13,7 @@ import { ColectivoComponent } from './screen/colectivo/colectivo.component';
 import { MicrosComponent } from './screen/micros/micros.component';
 import { ListUsersComponent } from './screen/list-users/list-users.component';
 import { HomeLogedComponent } from './screen/home-loged/home-loged.component';
+import { MicroadminComponent } from './screen/microadmin/microadmin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'micros',component: MicrosComponent },
   { path: 'listUsers',component: ListUsersComponent },
   { path: 'home/loged',component: HomeLogedComponent},
+  { path: 'admin/micros',component: MicroadminComponent},
 ];
 
 

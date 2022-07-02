@@ -19,6 +19,7 @@ const userSchema = mongoose.Schema({
 
 userSchema.methods.isCorrectPassword = function(password, callback){
     bcrypt.compare(password, this.password , function(err , same){
+        
         if(err){
             callback(err);
         }else{
@@ -26,15 +27,18 @@ userSchema.methods.isCorrectPassword = function(password, callback){
         }
     });
 }
-userSchema.methods.isAdmin = function(name, callback){
+userSchema.methods.isAdmin = function(name){
     if(this.name==name){
-        console.log('ola');
-    }
-    if(this.admin){
-        callback(err, same);
-    }else{
-        callback(err);
-    }
+    }    
+        if(this.admin){
+            
+            return(true);
+            
+        }else{
+            return(false);
+        }
+    
+    
 }
 
 module.exports = mongoose.model('User', userSchema);

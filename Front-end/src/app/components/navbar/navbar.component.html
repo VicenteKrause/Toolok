@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" [routerLink]="['home']">Tulook</a>
+      <a class="navbar-brand"(click)="home()">Tulook</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['home']">Home</a>
+            <a class="nav-link active" (click)="home()">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['tarjetas']">Tarjetas</a>
@@ -25,7 +25,7 @@
           
         </ul>
         <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-          <button type="button" class="btn btn-primary btn-floating mx-1" (click)="login()">
+          <button type="button" class="btn btn-primary btn-floating mx-1" (click)="login()" *ngIf="show()">
             <i class="fa-solid fa-user"></i>          
           </button>
         </div>               

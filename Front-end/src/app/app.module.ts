@@ -20,6 +20,8 @@ import { MicrosComponent } from './screen/micros/micros.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ListUsersComponent } from './screen/list-users/list-users.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { HomeLogedComponent } from './screen/home-loged/home-loged.component';
+import { MicroUsuarioComponent } from './screen/micro-usuario/micro-usuario.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     TaxiComponent,
     ColectivoComponent,
     MicrosComponent,
-    ListUsersComponent
+    ListUsersComponent,
+    HomeLogedComponent,
+    MicroUsuarioComponent
   ],
   imports: [
     BrowserModule,

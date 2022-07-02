@@ -52,9 +52,18 @@ router.post("/registrar", (req, res) => {
             res.status(500).send("Error al autenticar");
             console.log("error3");
         }else if(result){
-            console.log("tai redy");            
+          const ad = user.isAdmin(name);
+          console.log(ad);
+          if(ad){
+            res.status(200).send("Listo");
+            console.log("tai redy"); 
+          }else{
+            res.status(300).send("Listo");
+          }
+                     
             
         }else{
+          res.status(500);
             console.log("quien eres");
         }
         
@@ -62,11 +71,11 @@ router.post("/registrar", (req, res) => {
     }
   });
 });
+
 router.post("/admin", (req, res) => {
   const userS = req.body;
   const name = userS.name;
-  const password = userS.password;
-
+  console.log('hoal admi');
   userSchema.findOne({ name }, (err, user) => {
     if (err) {
       res.status(500).send("Error al autenticar");
@@ -75,20 +84,16 @@ router.post("/admin", (req, res) => {
       res.status(500).send("Error ,Usuari no existe");
       console.log("error2");
     } else {
-      user.isAdmin(name , (err , result)=>{
-        if (err) {
-          res.status(500).send("Error al autenticar");
-          console.log("error3");
-        }else if(result){
-          res.status(200)
-          console.log("tai redy");            
-            
-        }else{
-          res.status(500);
-          console.log("quien eres");
-        }
-        
-      });
+      const ad = user.isAdmin(name);
+      if(ad){
+        console.log('hola') ;
+        res.status(200);
+      }
+      else if(!ad){
+        res.status(500);
+      }else{
+        res.status(500);
+      }
     }
   });
 });

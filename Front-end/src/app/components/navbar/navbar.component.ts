@@ -11,10 +11,24 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  home(){
+    var path = window.location.pathname;
+    if (path == '/home/loged') {
+      window.location.href="/home/loged";
+    }else{
+      window.location.href="/home";
+    }
+  }
+    
   login(){
     window.location.href="/login";
   }
-
+  show(){
+    var path = window.location.pathname;
+    if (path == '/home/loged') {
+      return false;
+    }
+    return true;
+  }
   
 }

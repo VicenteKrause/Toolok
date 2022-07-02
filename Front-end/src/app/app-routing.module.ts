@@ -12,6 +12,7 @@ import { TaxiComponent } from './screen/taxi/taxi.component';
 import { ColectivoComponent } from './screen/colectivo/colectivo.component';
 import { MicrosComponent } from './screen/micros/micros.component';
 import { ListUsersComponent } from './screen/list-users/list-users.component';
+import { HomeLogedComponent } from './screen/home-loged/home-loged.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'colectivo',component: ColectivoComponent },
   { path: 'micros',component: MicrosComponent },
   { path: 'listUsers',component: ListUsersComponent },
+  { path: 'home/loged',component: HomeLogedComponent},
 ];
 
 

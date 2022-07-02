@@ -1,14 +1,14 @@
+
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { listMicros, Micros } from 'src/app/Interface/micros';
 import { LoginComponent} from '../login/login.component'
 
 
-
 @Component({
-  selector: 'app-micros',
-  templateUrl: './micros.component.html',
-  styleUrls: ['./micros.component.scss'],
+  selector: 'app-micro-usuario',
+  templateUrl: './micro-usuario.component.html',
+  styleUrls: ['./micro-usuario.component.scss']
 })
 export class MicrosComponent implements OnInit {
   formulario:FormGroup;
@@ -34,9 +34,7 @@ export class MicrosComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  show(){
-    
-  }
+  
   crear(){
     let micro:Micros={
       numero : this.numero.value,

@@ -44,25 +44,15 @@ export class LoginComponent implements OnInit {
         },
         body: usuariJson
     });
-    if(resp.status == 200){
-      const admin = await fetch('http://localhost:9000/api/admin',{
-          method: 'POST',
-          headers: {
-            "Content-Type" : "application/json"
-          },
-          body: usuariJson
-      });
-      if(admin.status == 200){
-        usuario.admin=true;
-      }
-      else{
-       ;
-      }
+    console.log('tula');
+    while(1){
+      console.log(resp.status);
+    }
+    if(resp.status === 200){      
+
     }else{
       window.alert("Usuario no registrado")
     }
-    
-
     
   }
 }

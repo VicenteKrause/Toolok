@@ -51,8 +51,7 @@ export class LoginComponent implements OnInit {
       });
       window.alert("Procesasndo"); 
       if(resp.status === 200){
-        window.alert("Secion Iniciada Admin");        
-        
+        window.alert("Secion Iniciada Admin");
         window.location.href="/admin/micros"; 
       }else if(resp.status === 300){
         window.alert("Secion Iniciada");
@@ -65,30 +64,5 @@ export class LoginComponent implements OnInit {
     }finally{
     } 
     
-  }
-  async admin(usuar:User){
-    try{
-      
-      let usuariJson = JSON.stringify(usuar);
-      
-      const resp = await fetch('http://localhost:9000/api/admin',{
-          method: 'POST',
-          headers: {
-            "Content-Type" : "application/json"
-          },
-          body: usuariJson
-      });
-      window.alert("Procesasndo"); 
-      if(resp.status === 200){
-        window.alert("Secion Iniciada");        
-        
-        window.location.href="/home/loged"; 
-      }
-      else{
-        window.alert("error");
-      }
-      
-    }finally{
-    } 
-  }
+  }  
 }

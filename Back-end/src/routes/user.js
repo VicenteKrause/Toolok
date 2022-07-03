@@ -42,58 +42,23 @@ router.post("/registrar", (req, res) => {
   userSchema.findOne({ name }, (err, user) => {
     if (err) {
       res.status(500).send("Error al autenticar");
-      console.log("error1");
     } else if (!user) {
       res.status(500).send("Error ,Usuari no existe");
-      console.log("error2");
     } else {      
       user.isCorrectPassword(password , (err , result)=>{
         if (err) {
-            res.status(500).send("Error al autenticar");
-            console.log("error3");
+          res.status(500).send("Error al autenticar");
         }else if(result){
-          const ad = user.isAdmin(name);
-          console.log(ad);
+          const ad = user.isAdmin(name);          
           if(ad){
             res.status(200).send("Listo");
-            console.log("tai redy"); 
           }else{
             res.status(300).send("Listo");
           }
-                     
-            
         }else{
           res.status(500);
-            console.log("quien eres");
         }
-        
       });
-    }
-  });
-});
-
-router.post("/admin", (req, res) => {
-  const userS = req.body;
-  const name = userS.name;
-  console.log('hoal admi');
-  userSchema.findOne({ name }, (err, user) => {
-    if (err) {
-      res.status(500).send("Error al autenticar");
-      console.log("error1");
-    } else if (!user) {
-      res.status(500).send("Error ,Usuari no existe");
-      console.log("error2");
-    } else {
-      const ad = user.isAdmin(name);
-      if(ad){
-        console.log('hola') ;
-        res.status(200);
-      }
-      else if(!ad){
-        res.status(500);
-      }else{
-        res.status(500);
-      }
     }
   });
 });

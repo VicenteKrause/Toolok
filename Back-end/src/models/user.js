@@ -19,7 +19,6 @@ const userSchema = mongoose.Schema({
 
 userSchema.methods.isCorrectPassword = function(password, callback){
     bcrypt.compare(password, this.password , function(err , same){
-        
         if(err){
             callback(err);
         }else{
@@ -28,15 +27,12 @@ userSchema.methods.isCorrectPassword = function(password, callback){
     });
 }
 userSchema.methods.isAdmin = function(name){
-    if(this.name==name){
-    }    
-        if(this.admin){
-            
-            return(true);
-            
-        }else{
-            return(false);
-        }
+    if(this.name==name){}    
+    if(this.admin){
+        return(true);
+    }else{
+        return(false);
+    }
     
     
 }

@@ -29,7 +29,12 @@ export class MicroadminComponent implements OnInit {
     this.listMicros=listMicros;
   }  
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    const aux = await fetch('http://localhost:9000/api/micros',{
+        method: 'GET'
+    }).then(response=>response.json());
+    this.listMicros =aux;
+
   }
  
   crear(){
@@ -39,9 +44,18 @@ export class MicroadminComponent implements OnInit {
       inicio : this.inicio.value,
       final : this.final.value,
     }
-   
-    this.listMicros.push(micro);
-    console.log(listMicros);   
+
+    let microJson = JSON.stringify(micro);
+    fetch('http://localhost:9000/api/micros',{
+        method: 'POST',
+        headers: {
+          "Content-Type" : "application/json"
+        },
+        body: microJson
+    });   
+    
+    window.location.reload();    
   }
+
 
 }

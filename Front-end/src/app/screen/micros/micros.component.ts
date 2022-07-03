@@ -32,9 +32,10 @@ export class MicrosComponent implements OnInit {
     this.listMicros=listMicros;
   }  
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    const aux = await fetch('http://localhost:9000/api/micros',{
+        method: 'GET'
+    }).then(response=>response.json());
+    this.listMicros =aux;
   }
-  
-  
-
 }
